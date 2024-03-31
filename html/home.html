@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-FOpGE2r1PYldCz0L2EBFDSZ+Bb4L3ECKPX9fYtZBvNzFu5OY+k9UK2Y5WwVpd33jxl1tkm6vp55RRu47w+uCgQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Student Management System</title>
+    <link rel="stylesheet" href="styles/Home.css">
+</head>
+<body>
+    <div class="bg-container">
+        <div class="overlay">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="images/kducrest.png" alt="Logo">
+            </div>
+            <ul class="navigation">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="myprofile.html">Settings</a></li>
+            </ul>
+        </div>
+        <div class="grey-side">
+        <header>
+            <div class="search-bar">
+                <input type="text" placeholder="Explore...">
+                <button type="submit">&#128269;</button>
+            </div>
+            <div class="profile">
+                <div class="user-info" onclick="toggleDropdown()">
+                    <img src="images/Sohani1.jpg" alt="Profile Picture">
+                    <span class="username">AS Weerasinghe</span>
+                    <button type="submit">&#9660;</button>
+                </div>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="myprofile.html">My Profile</a>
+                    <a href="login.html">Logout</a>
+                </div>
+            </div>
+            
+        </header>
+        <div class="container">
+            <p class="first-paragraph" style="text-align: left; font-size: 33px;margin-top:30px; font-family: montserrat;"><b>Welcome to the Student Management System for the Department of Software Engineering at the General Sir John Kotelawala Defence University!</b></p>
+            <p class="second-paragragh" style="text-align: left; font-size:20px; font-family:montserrat;"><b>With a user-friendly interface and robust functionalities, our system allows administrators to effortlessly add, remove, and update student records. Audit trails ensure accountability, while security measures safeguard sensitive information. Experience seamless student management with our flexible and reliable system, accessible from any modern web browser. Join us in streamlining student administration and enhancing efficiency today!</b></p>
+        </div>
+    </div>
+    </div>
+    </div>
+ <!-- Bootstrap JS -->
+ <script>
+    function toggleDropdown() {
+        var dropdownContent = document.getElementById("dropdownContent");
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        } else {
+            dropdownContent.style.display = "block";
+        }
+    }
+</script>
+    
+    
+</body>
+</html>

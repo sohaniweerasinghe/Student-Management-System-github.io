@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Student Management System</title>
+    <link rel="stylesheet" href="styles/editprofile.css">
+   
+</head>
+<body>
+    <div class="bg-container">
+        <div class="overlay">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="images/kducrest.png" alt="Logo">
+            </div>
+            <ul class="navigation">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="myprofile.html">Settings</a></li>
+            </ul>
+        </div>
+        <div class="grey-side">
+        <header>
+            <div class="search-bar">
+                <input type="text" placeholder="Explore...">
+                <button type="submit">&#128269;</button>
+            </div>
+            <div class="profile">
+                <div class="user-info" onclick="toggleDropdown()">
+                    <img src="images/Sohani1.jpg" alt="Profile Picture">
+                    <span class="username">AS Weerasinghe</span>
+                    <button type="submit">&#9660;</button>
+                </div>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="myprofile.html">My Profile</a>
+                    <a href="login.html">Logout</a>
+                </div>
+            </div>
+            
+        </header>
+        <div class="container">
+            <h2 style="color: white; font-size: 30px; margin-top: -10px;"><i>Edit Profile</i></h2>
+            <div class="profile-picture-container" onclick="triggerFileInput(event)">
+                <img src="images/Sohani1.jpg" alt="Profile Picture" class="profile-picture">
+            </div>
+            <input type="file" id="profilePicture" name="profilePicture" style="display: none;" onchange="previewImage()">
+            <div class="profile-info">
+                <form action="#" method="POST">
+                    <table class="transparent-table">
+                        <tr>
+                            <td><label for="username"><b>Full Name</b></label></td>
+                            <td><input type="text" class="form-control" id="Full Name" name="Full Name"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email"><b>Email</b></label></td>
+                            <td><input type="email" class="form-control" id="Email" name="Email"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Country"><b>Country</b></label></td>
+                            <td><input type="text" class="form-control" id="Country" name="Country"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="City"><b>City/Town</b></label></td>
+                            <td><input type="text" class="form-control" id="City" name="City"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="gender"><b>Gender</b></label></td>
+                            <td>
+                                <select id="gender" name="gender" class="form-control">
+                                    <option value="" disabled selected> Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <button type="submit" class="btn btn-primary" style="color:white"><b>Save</b></button>
+                </form>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+ <!-- Bootstrap JS -->
+ <script>
+    function toggleDropdown() {
+        var dropdownContent = document.getElementById("dropdownContent");
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        } else {
+            dropdownContent.style.display = "block";
+        }
+    }
+    function triggerFileInput(event) {
+        if (event.target.classList.contains('profile-picture')) {
+            document.getElementById('profilePicture').click();
+        }
+    }
+
+    function previewImage() {
+        var input = document.getElementById('profilePicture');
+        var preview = document.querySelector('.profile-picture');
+        var file = input.files[0];
+        var reader = new FileReader();
+
+        reader.onloadend = function () {
+            preview.src = reader.result;
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "Sohani1.jpg";
+        }
+    }
+</script>
+</body>
+</html>
